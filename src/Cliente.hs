@@ -19,9 +19,21 @@ postClienteCadR = do
     
 --lista todos os clientes
 getClientesR :: Handler Value
-getClientesR cId = do
+getClientesR = do
     clientes <- runDB $ selectList [][Asc ClienteId]
     sendStatusJSON ok200 (object ["resp" .= clientes])
     
+--get -> lista um cliente por vez
+getClienteR :: ClienteId -> Handler Value
+getClienteR clienteId = do
+    cid <- runDB $ get404 clienteId
+    sendStatusJSON ok200 (object ["resp" .= cid])
+    
+
+
+
+--put ->alteração de um cliente
+
+--delete -> deleta um cliente
 
 
