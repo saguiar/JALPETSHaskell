@@ -1,0 +1,18 @@
+/produto/#ProdutoId          ProdutoR         GET PUT DELETE
+/produto                     ProdutoCadR      POST
+/cliente/#ClienteId          ClienteR         GET PUT DELETE
+/cliente                     ClienteCadR      POST
+/servico/#ServicoId          ServicoR         GET PUT DELETE
+/servico                     ServicoCadR      POST
+/animal/#AnimalId            AnimalR          GET PUT DELETE
+/animal                      AnimalCadR       POST
+/agendamento/#AgendamentoId  AgendamentoR     GET PUT DELETE
+/agendamento                 AgendamentoCadR  POST
+
+/clientes                    ClientesR        GET
+/produtos                    ProdutosR        GET
+/animais                     AnimaisR         GET
+/servicos                    ServicosR        GET
+/agendamentos                Agendamentos     GET PATCH
+
+/static                      StaticR          Static getStatic
