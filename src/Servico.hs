@@ -16,4 +16,10 @@ postServicoCadR = do
     servico <- requireJsonBody :: Handler Servico --valida o formato dos dados inseridos
     sid <- runDB $ insert servico
     sendStatusJSON created201 (object ["resp" .= fromSqlKey sid])
+    
+--lista todos os servicos, faz parte da rota Servicos, nao servico
+getServicoR :: Handler Value
+getServicoR = do
+    servicos <- runDB $ selectList [][Asc ServicoId]
+    sendStatusJSON ok200 (object ["resp" .= servicos])  
 
