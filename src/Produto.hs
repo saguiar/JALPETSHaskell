@@ -29,4 +29,10 @@ getProdutoR produtoId = do
     pid <- runDB $ get404 produtoId
     sendStatusJSON ok200 (object ["resp" .= pid])
     
+--put ->alteração de um produto
+putProdutoR :: ProdutoId -> Handler Value
+putProdutoR produtoId = do
+    pid <- runDB $ replace produtoId
+    sendStatusJSON ok200 (object ["resp" .= pid])
+    
     
