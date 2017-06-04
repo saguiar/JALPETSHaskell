@@ -28,3 +28,9 @@ getServicoR :: ServicoId -> Handler Value
 getServicoR servicoId = do
     sid <- runDB $ get404 servicoId
     sendStatusJSON ok200 (object ["resp" .= sid])
+    
+--put ->alteração de um servico
+putServicoR :: ServicoId -> Handler Value
+putServicoR servicoId = do
+    sid <- runDB $ replace servicoId
+    sendStatusJSON ok200 (object ["resp" .= sid])
