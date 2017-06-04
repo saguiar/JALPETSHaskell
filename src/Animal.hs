@@ -30,3 +30,10 @@ getAnimalR :: AnimalId -> Handler Value
 getAnimalR animalId = do
     anid <- runDB $ get404 animalId
     sendStatusJSON ok200 (object ["resp" .= anid])
+
+--put ->alteração de um animal
+putAnimalR :: AnimalId -> Handler Value
+putAnimalR animalId = do
+    anid <- runDB $ replace animalId
+    sendStatusJSON ok200 (object ["resp" .= anid])
+    
