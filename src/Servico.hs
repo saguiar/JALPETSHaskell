@@ -21,5 +21,10 @@ postServicoCadR = do
 getServicoR :: Handler Value
 getServicoR = do
     servicos <- runDB $ selectList [][Asc ServicoId]
-    sendStatusJSON ok200 (object ["resp" .= servicos])  
-
+    sendStatusJSON ok200 (object ["resp" .= servicos])
+    
+--get -> lista um servico por vez
+getServicoR :: ServicoId -> Handler Value
+getServicoR servicoId = do
+    sid <- runDB $ get404 servicoId
+    sendStatusJSON ok200 (object ["resp" .= sid])
