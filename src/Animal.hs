@@ -25,3 +25,8 @@ getAnimaisR = do
     animais <- runDB $ selectList [][Asc AnimalId]
     sendStatusJSON ok200 (object ["resp" .= animais])
     
+--get -> lista um animal por vez
+getAnimalR :: AnimalId -> Handler Value
+getAnimalR animalId = do
+    anid <- runDB $ get404 animalId
+    sendStatusJSON ok200 (object ["resp" .= anid])
