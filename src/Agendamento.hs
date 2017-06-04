@@ -39,7 +39,7 @@ putAgendamentoR agendamentoId = do
     aid <- runDB $ replace agendamentoId
     sendStatusJSON ok200 (object ["resp" .= aid])
     
---delete -> deleta um cliente
+--delete -> deleta um agendamento
 deleteAgendamentoR :: AgendamentoR -> Handler Value
 deleteAgendamentoR agendamentoR = do
     aid <- runDB $ delete agendamentoR

@@ -35,4 +35,8 @@ putProdutoR produtoId = do
     pid <- runDB $ replace produtoId
     sendStatusJSON ok200 (object ["resp" .= pid])
     
-    
+--delete -> deleta um produto
+deleteProdutoR :: ProdutoR -> Handler Value
+deleteProdutoR produtoR = do
+    pid <- runDB $ delete produtoR
+    sendStatusJSON noContent204 (object ["resp" .= pid])
