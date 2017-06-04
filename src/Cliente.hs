@@ -37,11 +37,13 @@ putClienteR clienteId = do
     sendStatusJSON ok200 (object ["resp" .= cid])
 
 
-aluno <- requireJsonBody :: Handler Aluno
-    
-
-
 --delete -> deleta um cliente
 deleteClienteR :: ClienteId -> Handler Value
-deleteClienteR clienteId = undefined
-
+deleteClienteR clienteId = do
+    cid <- runDB $ delete clienteId
+    sendStatusJSON ok200 (object ["resp" .= cid])
+    
+    --modelo do prof pra exclusao, nao tenho certeza do que significa e pq esta diferente dos outros, entao achei melhor comentar
+    --cid <- runDB $ get404 clienteId NÃO TENHO CERTEZA QUE ESSA LINHA É NECESSARIA
+    --runDB $ delete clienteId NÃO TENHO CERTEZA SE É ASSIM A SINTAXE
+    --sendStatusJSON noContent204 (object ["resp" .= ("DELETED " ++ show (fromSqlKey aid))]) NÃO TENHO CTZ TB
