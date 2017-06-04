@@ -35,4 +35,8 @@ putAnimalR animalId = do
     anid <- runDB $ replace animalId
     sendStatusJSON ok200 (object ["resp" .= anid])
     
---FALTA FAZER A EXCLUSAO
+--delete -> deleta um animal
+deleteAnimalR :: AnimalR -> Handler Value
+deleteAnimalR animalR = do
+    anid <- runDB $ delete animalR
+    sendStatusJSON noContent204 (object ["resp" .= anid])
