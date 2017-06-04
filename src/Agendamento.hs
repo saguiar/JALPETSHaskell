@@ -23,3 +23,13 @@ getAgendamentosR = do
     agendamentos <- runDB $ selectList [][Asc AgendamentoId]
     sendStatusJSON ok200 (object ["resp" .= agendamentos])
 
+--patch para alteracao dos agendamentos, o patch pode alterar várias linhas ao mesmo tempo, mas não as colunas, achei que seria útil pra por exemplo, atualizar todos os horários/datas dos agendamentos
+patchAgendamentosR :: Handler Value
+patchAgendamentosR :: undefined
+
+--get -> lista um agendamento por vez
+getAgendamentoR :: AgendamentoId -> Handler Value
+getAgendamentoR AgendamentoId = do
+    aid <- runDB $ get404 AgendamentoId
+    sendStatusJSON ok200 (object ["resp" .= aid])
+    
