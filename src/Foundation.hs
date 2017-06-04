@@ -13,7 +13,7 @@ import Database.Persist.Postgresql
 data Sitio = Sitio {getStatic :: Static, connPool :: ConnectionPool }
 
 --criação do campo sexo
-data Sexo = M | F deriving (Generic, Read, Show)
+data Sexo = M | F deriving (Read, Show) -- na tentativa de dar o stack build, ele disse que não poderia fazer a instancia de generic sexo, e que precisaria de DERIVEGENERIC to derive an instance for this class
 instance ToJSON Sexo
 instance FromJSON Sexo
 
