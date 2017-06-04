@@ -17,3 +17,10 @@ postProdutoCadR = do
     cidp <- runDB $ insert produto
     sendStatusJSON created201 (object ["resp" .= fromSqlKey cid])
     
+--lista todos os produtos, faz parte da rota PRODUTOS, nao produto
+getProdutoR :: Handler Value
+getProdutoR = do
+    produtos <- runDB $ selectList [][Asc ProdutoId]
+    sendStatusJSON ok200 (object ["resp" .= produtos])   
+    
+    
