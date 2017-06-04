@@ -17,3 +17,9 @@ postAgendamentoCadR = do
     aid <- runDB $ insert agendamento --aid agendamento id
     sendStatusJSON created201 (object ["resp" .= fromSqlKey aid])
     
+--lista todos os agendamentos
+getAgendamentosR :: Handler Value
+getAgendamentosR = do
+    agendamentos <- runDB $ selectList [][Asc AgendamentoId]
+    sendStatusJSON ok200 (object ["resp" .= agendamentos])
+
