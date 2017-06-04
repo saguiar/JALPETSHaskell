@@ -1,9 +1,7 @@
-3
-0
-,{0-# LANGUAGE OverloadedStrings, QuasiQuotes,
+{0-# LANGUAGE OverloadedStrings, QuasiQuotes,
              TemplateHaskell #-}
  
-module Cliente where
+module Animal where
 import Yesod
 import Foundation
 import Control.Monad.Logger (runStdoutLoggingT)
@@ -37,3 +35,4 @@ putAnimalR animalId = do
     anid <- runDB $ replace animalId
     sendStatusJSON ok200 (object ["resp" .= anid])
     
+--FALTA FAZER A EXCLUSAO

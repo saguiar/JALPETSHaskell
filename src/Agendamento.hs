@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings, QuasiQuotes,
              TemplateHaskell #-}
  
-module Cliente where
+module Agendamento where
 import Yesod
 import Foundation
 import Control.Monad.Logger (runStdoutLoggingT)
@@ -43,7 +43,7 @@ putAgendamentoR agendamentoId = do
 deleteAgendamentoR :: AgendamentoR -> Handler Value
 deleteAgendamentoR agendamentoR = do
     aid <- runDB $ delete agendamentoR
-    sendStatusJSON ok200 (object ["resp" .= aid])
+    sendStatusJSON noContent204 (object ["resp" .= aid])
     
     
     

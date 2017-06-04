@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings, QuasiQuotes,
+{0-# LANGUAGE OverloadedStrings, QuasiQuotes,
              TemplateHaskell #-}
  
 module Cliente where
@@ -17,7 +17,7 @@ postClienteCadR = do
     cid <- runDB $ insert cliente
     sendStatusJSON created201 (object ["resp" .= fromSqlKey cid])
     
---lista todos os clientes
+--lista todos os clientes, faz parte da rota CLIENTES, nao cliente
 getClientesR :: Handler Value
 getClientesR = do
     clientes <- runDB $ selectList [][Asc ClienteId]
@@ -41,9 +41,9 @@ putClienteR clienteId = do
 deleteClienteR :: ClienteId -> Handler Value
 deleteClienteR clienteId = do
     cid <- runDB $ delete clienteId
-    sendStatusJSON ok200 (object ["resp" .= cid])
+    sendStatusJSON noContent204 (object ["resp" .= cid])
     
     --modelo do prof pra exclusao, nao tenho certeza do que significa e pq esta diferente dos outros, entao achei melhor comentar
-    --cid <- runDB $ get404 clienteId NÃO TENHO CERTEZA QUE ESSA LINHA É NECESSARIA
-    --runDB $ delete clienteId NÃO TENHO CERTEZA SE É ASSIM A SINTAXE
-    --sendStatusJSON noContent204 (object ["resp" .= ("DELETED " ++ show (fromSqlKey aid))]) NÃO TENHO CTZ TB
+    --cid <- runDB $ get404 clienteId
+    --runDB $ delete clienteId
+    --sendStatusJSON noContent204 (object ["resp" .= ("DELETED " ++ show (fromSqlKey aid))]) 

@@ -3,7 +3,6 @@
  
 module Main where
 import Yesod
-import Yesod.Static
 import Foundation
 import Application
 import Control.Monad.Logger (runStdoutLoggingT)
@@ -16,5 +15,4 @@ connStr = "dbname=dd9en8l5q4hh2a host=ec2-107-21-219-201.compute-1.amazonaws.com
 main::IO()
 main = runStdoutLoggingT $ withPostgresqlPool connStr 10 $ \pool -> liftIO $ do 
        runSqlPersistMPool (runMigration migrateAll) pool 
-       t@(Static settings) <- static "static"
        warp 3000 (Sitio t pool)
