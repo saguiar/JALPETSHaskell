@@ -44,4 +44,5 @@ executable         jalpets
                    Agendamento
                    Animal
                    Cliente
-                   
+                   Servico
+                   Produto
