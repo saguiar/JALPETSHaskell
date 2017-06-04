@@ -19,3 +19,9 @@ postAnimalCadR = do
     anid <- runDB $ insert animal
     sendStatusJSON created201 (object ["resp" .= fromSqlKey anid])
     
+-lista todos os animais, faz parte da rota ANIMAIS, nao animal
+getAnimaisR :: Handler Value
+getAnimaisR = do
+    animais <- runDB $ selectList [][Asc AnimalId]
+    sendStatusJSON ok200 (object ["resp" .= animais])
+    
