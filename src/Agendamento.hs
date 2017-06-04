@@ -29,7 +29,16 @@ patchAgendamentosR :: undefined
 
 --get -> lista um agendamento por vez
 getAgendamentoR :: AgendamentoId -> Handler Value
-getAgendamentoR AgendamentoId = do
+getAgendamentoR agendamentoId = do
     aid <- runDB $ get404 AgendamentoId
     sendStatusJSON ok200 (object ["resp" .= aid])
+    
+--put ->alteração de um agendamento
+putAgendamentoR :: AgendamentoId -> Handler Value
+putAgendamentoR agendamentoId = do
+    aid <- runDB $ replace agendamentoId
+    sendStatusJSON ok200 (object ["resp" .= aid])
+    
+    
+    
     
