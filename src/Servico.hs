@@ -34,3 +34,9 @@ putServicoR :: ServicoId -> Handler Value
 putServicoR servicoId = do
     sid <- runDB $ replace servicoId
     sendStatusJSON ok200 (object ["resp" .= sid])
+    
+--delete -> deleta um servico
+deleteServicoR :: ServicoR -> Handler Value
+deleteServicoR servicoR = do
+    sid <- runDB $ delete servicoR
+    sendStatusJSON noContent204 (object ["resp" .= sid])
