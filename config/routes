@@ -13,6 +13,6 @@
 /produtos                    ProdutosR        GET
 /animais                     AnimaisR         GET
 /servicos                    ServicosR        GET
-/agendamentos                Agendamentos     GET PATCH
+/agendamentos                AgendamentosR     GET PATCH
 
 /static                      StaticR          Static getStatic
