@@ -8,7 +8,7 @@ Alterar cliente
 
 Deletar cliente
 
-    curl -X DELETE -d {"nome":"", "telefone": "", "sexo":"", "email":""} 
+    curl -X DELETE 
 
 Adicionar produto 
 
@@ -20,7 +20,7 @@ Alterar produto
     
 Deletar produto 
 
-    curl -X DELETE -d {"nome"":"", "preço": "", "fabricante":"", "validade":""} 
+    curl -X DELETE 
     
 Adicionar servico
 
@@ -29,4 +29,8 @@ Adicionar servico
 Alterar servico
 
     curl -X PUT -d {"nome"":"", "preço": ""}
+    
+Deletar servico
+    
+    curl -X DELETE
     
