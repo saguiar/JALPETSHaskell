@@ -21,3 +21,9 @@ Alterar produto
 Deletar produto 
 
     curl -X DELETE -d {"nome"":"", "preço": "", "fabricante":"", "validade":""} 
+    
+Adicionar servico
+
+    curl -X POST -d {"nome"":"", "preço": ""}
+    
+    
