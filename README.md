@@ -13,3 +13,8 @@ Deletar cliente
 Adicionar produto 
 
     curl -X POST -d {"nome"":"", "preço": "", "fabricante":"", "validade":""} 
+    
+Alterar produto 
+
+    curl -X PUT -d {"nome"":"", "preço": "", "fabricante":"", "validade":""} 
+    
