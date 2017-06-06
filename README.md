@@ -18,3 +18,6 @@ Alterar produto
 
     curl -X PUT -d {"nome"":"", "preço": "", "fabricante":"", "validade":""} 
     
+Deletar produto 
+
+    curl -X DELETE -d {"nome"":"", "preço": "", "fabricante":"", "validade":""} 
