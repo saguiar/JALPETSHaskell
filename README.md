@@ -37,5 +37,9 @@ Deletar servico
 Adicionar agendamento
 
     curl -X POST -d ("data":"", "servico":"", "animal":"")
-        
+
+Alterar agendamento
+
+    curl -X PUT -d ("data":"", "servico":"", "animal":"")
+
     
