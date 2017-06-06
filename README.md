@@ -42,4 +42,7 @@ Alterar agendamento
 
     curl -X PUT -d ("data":"", "servico":"", "animal":"")
 
+Deletar agendamento
+
+    curl -X DELETE -d ("data":"", "servico":"", "animal":"")
     
