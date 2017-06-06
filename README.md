@@ -26,4 +26,7 @@ Adicionar servico
 
     curl -X POST -d {"nome"":"", "preço": ""}
     
+Alterar servico
+
+    curl -X PUT -d {"nome"":"", "preço": ""}
     
