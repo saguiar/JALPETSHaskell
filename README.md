@@ -50,4 +50,9 @@ Adicionar animal
 
     curl -X POST -d {"nome":"", "nascimento":"", "tipo":"", "clienteId":""}
     
+Alterar animal
+    
+    curl -X PUT -d {"nome":"", "nascimento":"", "tipo":"", "clienteId":""}
+    
+    
     
