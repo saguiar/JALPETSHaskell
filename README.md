@@ -54,5 +54,7 @@ Alterar animal
     
     curl -X PUT -d {"nome":"", "nascimento":"", "tipo":"", "clienteId":""}
     
-    
+Deletar animal
+
+    curl -X DELETE 
     
