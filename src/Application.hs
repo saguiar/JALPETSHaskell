@@ -4,9 +4,11 @@
 module Application where
 import Foundation
 import Yesod
-import Usuario
-import Handlers
-import Front
+import Animal
+import Cliente
+import Produto
+import Servico
+import Agendamento
 
 -- Application
 mkYesodDispatch "Sitio" resourcesSitio

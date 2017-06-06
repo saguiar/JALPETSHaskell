@@ -1,4 +1,4 @@
-{0-# LANGUAGE OverloadedStrings, QuasiQuotes,
+{-# LANGUAGE OverloadedStrings, QuasiQuotes,
              TemplateHaskell #-}
  
 module Cliente where
@@ -6,8 +6,9 @@ import Yesod
 import Foundation
 import Control.Monad.Logger (runStdoutLoggingT)
 import Control.Applicative
-import Data.Text
-
+import qualified Data.Text as T
+import Network.HTTP.Types.Status
+import Data.Aeson.Types (emptyObject)
 import Database.Persist.Postgresql
 
 --Cadastro de cliente
@@ -33,7 +34,8 @@ getClienteR clienteId = do
 --put ->alteração de um cliente
 putClienteR :: ClienteId -> Handler Value
 putClienteR clienteId = do
-    cid <- runDB $ replace clienteId
+    cliente <- requireJsonBody :: Handler Cliente
+    cid <- runDB $ replace clienteId cliente
     sendStatusJSON ok200 (object ["resp" .= cid])
 
 

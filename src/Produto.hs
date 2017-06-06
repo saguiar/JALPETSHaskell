@@ -1,4 +1,4 @@
-{0-# LANGUAGE OverloadedStrings, QuasiQuotes,
+{-# LANGUAGE OverloadedStrings, QuasiQuotes,
              TemplateHaskell #-}
  
 module Produto where
@@ -6,7 +6,9 @@ import Yesod
 import Foundation
 import Control.Monad.Logger (runStdoutLoggingT)
 import Control.Applicative
-import Data.Text
+import qualified Data.Text as T
+import Data.Aeson.Types (emptyObject)
+import Network.HTTP.Types.Status
 
 import Database.Persist.Postgresql
 
@@ -18,8 +20,8 @@ postProdutoCadR = do
     sendStatusJSON created201 (object ["resp" .= fromSqlKey pid])
     
 --lista todos os produtos, faz parte da rota PRODUTOS, nao produto
-getProdutoR :: Handler Value
-getProdutoR = do
+getProdutosR :: Handler Value
+getProdutosR = do
     produtos <- runDB $ selectList [][Asc ProdutoId]
     sendStatusJSON ok200 (object ["resp" .= produtos])  
     
@@ -32,11 +34,12 @@ getProdutoR produtoId = do
 --put ->alteração de um produto
 putProdutoR :: ProdutoId -> Handler Value
 putProdutoR produtoId = do
-    pid <- runDB $ replace produtoId
+    produto <- requireJsonBody :: Handler Produto 
+    pid <- runDB $ replace produtoId produto
     sendStatusJSON ok200 (object ["resp" .= pid])
     
 --delete -> deleta um produto
-deleteProdutoR :: ProdutoR -> Handler Value
-deleteProdutoR produtoR = do
-    pid <- runDB $ delete produtoR
-    sendStatusJSON noContent204 (object ["resp" .= pid])
+deleteProdutoR :: ProdutoId -> Handler Value
+deleteProdutoR produto = do
+    pid <- runDB $ delete produto
+    sendStatusJSON noContent204 emptyObject

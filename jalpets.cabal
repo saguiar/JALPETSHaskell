@@ -25,6 +25,7 @@ executable         jalpets
                 DeriveDataTypeable
                 ViewPatterns
                 TupleSections
+                DeriveGeneric
                 RecordWildCards
 
     build-depends: base                          
@@ -32,14 +33,18 @@ executable         jalpets
                  , yesod-auth                    
                  , yesod-static                 
                  , yesod-form                    
-                 , bytestring                   
+                 , bytestring
+                 , aeson
+                 , http-types
                  , text                          
                  , persistent                    
                  , persistent-postgresql         
                  , monad-logger
                  , shakespeare
+                 , time
     
     other-modules: Application
+                   Persistencia
                    Foundation
                    Agendamento
                    Animal

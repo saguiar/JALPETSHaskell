@@ -6,16 +6,16 @@ module Foundation where
 import Yesod
 import Yesod.Static
 import Data.Text
-import GHC.Generics
+import Data.Time.Clock
+import Data.Time.Calendar
 import Database.Persist.Postgresql
     ( ConnectionPool, SqlBackend, runSqlPool, runMigration )
+    
+import Persistencia
 
-data Sitio = Sitio {getStatic :: Static, connPool :: ConnectionPool }
+data Sitio = Sitio {connPool :: ConnectionPool }
 
---criação do campo sexo
-data Sexo = M | F deriving (Read, Show) -- na tentativa de dar o stack build, ele disse que não poderia fazer a instancia de generic sexo, e que precisaria de DERIVEGENERIC to derive an instance for this class
-instance ToJSON Sexo
-instance FromJSON Sexo
+instance Yesod Sitio
 
 share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
 
@@ -25,12 +25,12 @@ Produto json
     preco Double
     fabricante Text
     validade Day
-    UniqueNome nome --nao haver duplicidade de produtos no BD
+    UniqueNomeProduto nome --nao haver duplicidade de produtos no BD
     
 Servico json
     nome Text
     preco Double
-    UniqueNome nome --nao haver duplicidade de servicos no BD
+    UniqueNomeServico nome --nao haver duplicidade de servicos no BD
     
 Cliente json
     nome Text
@@ -51,11 +51,9 @@ Agendamento json
 
 |]
 
-staticFiles "static"
 --cod do haskell ate o 65
 mkYesodData "Sitio" $(parseRoutesFile "config/routes")
 
-mkMessage "Sitio" "messages" "pt-BR"
 
 instance YesodPersist Sitio where
    type YesodPersistBackend Sitio = SqlBackend

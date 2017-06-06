@@ -14,5 +14,3 @@
 /animais                     AnimaisR         GET
 /servicos                    ServicosR        GET
 /agendamentos                AgendamentosR    GET PATCH
-
-/static                      StaticR          Static getStatic
