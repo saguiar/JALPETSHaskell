@@ -5,3 +5,7 @@ Adicionar cliente
 Alterar cliente
 
     curl -X PUT -d {"nome":"", "telefone": "", "sexo":"", "email":""} 
+
+Deletar cliente
+
+    curl -X DELETE -d {"nome":"", "telefone": "", "sexo":"", "email":""} 
