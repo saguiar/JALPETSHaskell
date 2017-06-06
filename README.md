@@ -44,5 +44,5 @@ Alterar agendamento
 
 Deletar agendamento
 
-    curl -X DELETE -d 
+    curl -X DELETE 
     
