@@ -1,3 +1,5 @@
+# Cliente
+
 Adicionar cliente 
 
     curl -X POST http://node23.codenvy.io:53581/cliente -d '{"nome":"", "telefone": "", "sexo":"M", "email":""}'
@@ -23,6 +25,8 @@ Deletar cliente
     Resposta: vazio
     
     
+# Produto
+
 Adicionar produto 
 
     curl -X POST http://node23.codenvy.io:53581/produto -d '{"nome"":"", "preço": "", "fabricante":"", "validade":""}'
@@ -47,6 +51,8 @@ Deletar produto
     
     Resposta: vazio
     
+# Serviço
+    
 Adicionar servico
 
     curl -X POST http://node23.codenvy.io:53581/servico -d '{"nome"":"", "preço": ""}' 
@@ -70,6 +76,8 @@ Deletar servico
     Sucesso: no content 204
     
     Resposta: vazio
+    
+# Agendamento
 
 Adicionar agendamento
 
@@ -102,6 +110,8 @@ Deletar agendamento
     Sucesso: no content 204
     
     Resposta: vazio
+    
+# Animal
      
 Adicionar animal
 
