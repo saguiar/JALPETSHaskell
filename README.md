@@ -89,7 +89,7 @@ Alterar agendamento
     
 Alterar agendamento
 
-    curl -X PATCH -d {[,]} 	http://node23.codenvy.io:53581/agendamentos
+    curl -X PATCH -d {[3600,"2016-12-07T03:55:20Z"]} 	http://node23.codenvy.io:53581/agendamentos
     
     Sucesso: ok 200
     
