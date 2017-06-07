@@ -1,6 +1,6 @@
-# Cliente
+# Cliente :grinning:
 
-Adicionar cliente 
+## Adicionar cliente 
 
     curl -X POST http://node23.codenvy.io:53581/cliente -d '{"nome":"", "telefone": "", "sexo":"M", "email":""}'
     
@@ -8,7 +8,7 @@ Adicionar cliente
     
     Resposta: {"resp":5}
     
-Alterar cliente
+## Alterar cliente
 
     curl -X PUT http://node23.codenvy.io:53581/cliente/1 -d '{"nome":"", "telefone": "", "sexo":"F", "email":""}'
     
@@ -16,7 +16,7 @@ Alterar cliente
     
     Resposta: {"resp":1}
 
-Deletar cliente
+## Deletar cliente
 
     curl -X DELETE http://node23.codenvy.io:53581/cliente/5
     
@@ -25,9 +25,9 @@ Deletar cliente
     Resposta: vazio
     
     
-# Produto
+# Produto :paw_prints:
 
-Adicionar produto 
+## Adicionar produto 
 
     curl -X POST http://node23.codenvy.io:53581/produto -d '{"nome"":"", "preço": "", "fabricante":"", "validade":""}'
     
@@ -35,7 +35,7 @@ Adicionar produto
     
     Resposta: {"resp": 2}
     
-Alterar produto 
+## Alterar produto 
 
     curl -X PUT http://node23.codenvy.io:53581/produto/2 -d '{"nome"":"", "preço": "", "fabricante":"", "validade":""}'
     
@@ -43,7 +43,7 @@ Alterar produto
     
     Resposta: {"resp":2}
     
-Deletar produto 
+## Deletar produto 
 
     curl -X DELETE 	http://node23.codenvy.io:53581/produto/3
     
@@ -51,9 +51,9 @@ Deletar produto
     
     Resposta: vazio
     
-# Serviço
+# Serviço :shower:
     
-Adicionar servico
+## Adicionar servico
 
     curl -X POST http://node23.codenvy.io:53581/servico -d '{"nome"":"", "preço": ""}' 
     
@@ -61,7 +61,7 @@ Adicionar servico
     
     Resposta: {"resp":3}
     
-Alterar servico
+## Alterar servico
 
     curl -X PUT http://node23.codenvy.io:53581/servico/1 -d '{"nome"":"", "preço": ""}'
     
@@ -69,7 +69,7 @@ Alterar servico
     
     Resposta: {"resp":1}
     
-Deletar servico
+## Deletar servico
     
     curl -X DELETE 	http://node23.codenvy.io:53581/servico/2
     
@@ -77,9 +77,9 @@ Deletar servico
     
     Resposta: vazio
     
-# Agendamento
+# Agendamento :clock2:
 
-Adicionar agendamento
+## Adicionar agendamento
 
     curl -X POST http://node23.codenvy.io:53581/agendamento -d '{"data":"", "servico":"", "animal":""}'
     
@@ -87,7 +87,7 @@ Adicionar agendamento
     
     Resposta: {"resp":3}
 
-Alterar agendamento
+## Alterar agendamento
 
     curl -X PUT -d '{"data":"", "servico":"", "animal":""}' 	http://node23.codenvy.io:53581/agendamento/2
     
@@ -95,7 +95,7 @@ Alterar agendamento
     
     Resposta: {"resp":2}
     
-Alterar agendamento
+## Alterar agendamento
 
     curl -X PATCH -d {[3600,"2016-12-07T03:55:20Z"]} 	http://node23.codenvy.io:53581/agendamentos
     
@@ -103,7 +103,7 @@ Alterar agendamento
     
     Resposta: No content
 
-Deletar agendamento
+## Deletar agendamento
 
     curl -X DELETE 	http://node23.codenvy.io:53581/agendamento/3
     
@@ -111,9 +111,9 @@ Deletar agendamento
     
     Resposta: vazio
     
-# Animal
+# Animal :dog:
      
-Adicionar animal
+## Adicionar animal
 
     curl -X POST http://node23.codenvy.io:53581/animal -d '{"nome":"", "nascimento":"", "tipo":"", "clienteId":""}' 
     
@@ -121,7 +121,7 @@ Adicionar animal
     
     Resposta: {"resp":2}
     
-Alterar animal
+## Alterar animal
     
     curl -X PUT http://node23.codenvy.io:53581/animal/2 -d '{"nome":"", "nascimento":"", "tipo":"", "clienteId":""}'
     
@@ -129,7 +129,7 @@ Alterar animal
     
     Resposta: {"resp":2}
     
-Deletar animal
+## Deletar animal
 
     curl -X DELETE 	http://node23.codenvy.io:53581/animal/3
     
