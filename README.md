@@ -12,7 +12,7 @@
 
     curl -X PUT http://node23.codenvy.io:53581/cliente/1 -d '{"nome":"", "telefone": "", "sexo":"F", "email":""}'
     
-    Sucesso: ok 200
+    Sucesso: 200 ok
     
     Resposta: {"resp":1}
 
@@ -24,6 +24,13 @@
 
     Resposta: vazio
     
+## Listar clientes
+
+    curl -X GET http://node23.codenvy.io:53581/cliente
+    
+    Sucesso: 200 ok
+    
+    Resposta: {["nome":"", "telefone": "", "sexo":"F", "email":"", "nome":"", "telefone": "", "sexo":"F", "email":""]}
     
 # Produto :paw_prints:
 
@@ -39,7 +46,7 @@
 
     curl -X PUT http://node23.codenvy.io:53581/produto/2 -d '{"nome"":"", "preço": "", "fabricante":"", "validade":""}'
     
-    Sucesso: ok 200
+    Sucesso: 200 ok
     
     Resposta: {"resp":2}
     
@@ -50,6 +57,14 @@
     Sucesso: no content 204
     
     Resposta: vazio
+    
+## Listar produtos
+
+    curl -X GET http://node23.codenvy.io:53581/produto
+    
+    Sucesso: 200 ok
+    
+    Resposta: {["nome"":"", "preço": "", "fabricante":"", "validade":"", "nome"":"", "preço": "", "fabricante":"", "validade":""]}
     
 # Serviço :shower:
     
@@ -65,7 +80,7 @@
 
     curl -X PUT http://node23.codenvy.io:53581/servico/1 -d '{"nome"":"", "preço": ""}'
     
-    Sucesso: ok 200
+    Sucesso: 200 ok
     
     Resposta: {"resp":1}
     
@@ -76,6 +91,14 @@
     Sucesso: no content 204
     
     Resposta: vazio
+    
+## Listar servico
+
+    curl -X GET http://node23.codenvy.io:53581/servico
+    
+    Sucesso: 200 ok
+    
+    Resposta: {["nome"":"", "preço": ", "nome"":"", "preço": "]}
     
 # Agendamento :clock2:
 
@@ -91,15 +114,15 @@
 
     curl -X PUT -d '{"data":"", "servico":"", "animal":""}' 	http://node23.codenvy.io:53581/agendamento/2
     
-    Sucesso: ok 200
+    Sucesso: 200 ok
     
     Resposta: {"resp":2}
     
-## Alterar agendamento
+## Alterar agendamentos
 
     curl -X PATCH -d {[3600,"2016-12-07T03:55:20Z"]} 	http://node23.codenvy.io:53581/agendamentos
     
-    Sucesso: ok 200
+    Sucesso: 200 ok
     
     Resposta: No content
 
@@ -110,6 +133,14 @@
     Sucesso: no content 204
     
     Resposta: vazio
+
+## Listar agendamentos
+
+    curl -X GET http://node23.codenvy.io:53581/agendamento
+    
+    Sucesso: 200 ok
+    
+    Resposta: {["data":"", "servico":"", "animal":"", "data":"", "servico":"", "animal":""]}
     
 # Animal :dog:
      
@@ -125,7 +156,7 @@
     
     curl -X PUT http://node23.codenvy.io:53581/animal/2 -d '{"nome":"", "nascimento":"", "tipo":"", "clienteId":""}'
     
-    Sucesso: ok 200
+    Sucesso: 200 ok
     
     Resposta: {"resp":2}
     
@@ -136,4 +167,12 @@
     Sucesso: no content 204
     
     Resposta: vazio
+    
+## Listar animais
+
+    curl -X GET http://node23.codenvy.io:53581/animal
+    
+    Sucesso: 200 ok
+    
+    Resposta: {[{"nome":"", "nascimento":"", "tipo":"", "clienteId":""}, {"nome":"", "nascimento":"", "tipo":"", "clienteId":""}]}
     
