@@ -1,4 +1,4 @@
-#Documentação Jalpets - Petshop
+# Documentação Jalpets - Petshop
 
 O nosso webservice, Jalpets, foi criado para o uso de petshops. Nele é possível gerenciar cadastro/alteração/exclusão de clientes,
 produtos, serviços, agendamentos e animais. 
@@ -9,7 +9,8 @@ produtos, serviços, agendamentos e animais.
 
     curl -X POST http://node23.codenvy.io:53581/cliente -d '{"nome":"", "telefone": "", "sexo":"M", "email":""}'
     
-    Para o adicionar um cliente, usamos o método POST. Nele colocamos os dados cliente, telefone, sexo e email.
+    Para o adicionar um cliente, usamos o método POST. 
+    Nele colocamos os dados cliente, telefone, sexo e email.
     O retorno correto deve ser resp: clienteId.
     
     Sucesso: 201 created 
@@ -20,7 +21,8 @@ produtos, serviços, agendamentos e animais.
 
     curl -X PUT http://node23.codenvy.io:53581/cliente/1 -d '{"nome":"", "telefone": "", "sexo":"F", "email":""}'
     
-    Para alterar os dados do cliente, é utilizado o método PUT, URL e o cliente Id. Pode-se alterar nome, telefone, sexo e email.
+    Para alterar os dados do cliente, é utilizado o método PUT, URL e o cliente Id. 
+    Pode-se alterar nome, telefone, sexo e email.
     O retorno deve ser resp e o cliente Id.
     
     Sucesso: 200 ok
@@ -55,7 +57,8 @@ produtos, serviços, agendamentos e animais.
 
     curl -X POST http://node23.codenvy.io:53581/produto -d '{"nome"":"", "preço": "", "fabricante":"", "validade":""}'
     
-    Para o adicionar um produto, usamos o método POST. Nele colocamos os dados nome, preço, fabricante e validade.
+    Para o adicionar um produto, usamos o método POST. 
+    Nele colocamos os dados nome, preço, fabricante e validade.
     O retorno correto deve ser resp: produtoId.
     
     Sucesso: 201 created
@@ -102,7 +105,8 @@ produtos, serviços, agendamentos e animais.
 
     curl -X POST http://node23.codenvy.io:53581/servico -d '{"nome"":"", "preço": ""}' 
     
-    Para o adicionar um serviço, usamos o método POST. Nele colocamos os dados nome e preço.
+    Para o adicionar um serviço, usamos o método POST. 
+    Nele colocamos os dados nome e preço.
     O retorno correto deve ser resp: servicoId.
     
     Sucesso: 201 created
@@ -150,7 +154,8 @@ produtos, serviços, agendamentos e animais.
 
     curl -X POST http://node23.codenvy.io:53581/agendamento -d '{"data":"", "servico":"", "animal":""}'
     
-    Para o adicionar um agendamento, usamos o método POST. Nele colocamos os dados data, servico e animal.
+    Para o adicionar um agendamento, usamos o método POST. 
+    Nele colocamos os dados data, servico e animal.
     O retorno correto deve ser resp: agendamentoId.
     
     Sucesso: 201 created
@@ -209,7 +214,8 @@ produtos, serviços, agendamentos e animais.
 
     curl -X POST http://node23.codenvy.io:53581/animal -d '{"nome":"", "nascimento":"", "tipo":"", "clienteId":""}' 
     
-    Para o adicionar um animal, usamos o método POST. Nele colocamos os dados nome, nascimento, tipo e cliente Id.
+    Para o adicionar um animal, usamos o método POST. 
+    Nele colocamos os dados nome, nascimento, tipo e cliente Id.
     O retorno correto deve ser resp: animalId.
     
     Sucesso: 201 created
