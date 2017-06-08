@@ -42,9 +42,9 @@ produtos, serviços, agendamentos e animais.
     
 ### Listar clientes
 
-    curl -X GET http://node23.codenvy.io:53581/cliente
+    curl -X GET http://node23.codenvy.io:53581/clientes
     
-    Para listar todos os clientes, o método usado é o GET juntamente com a URL /cliente.
+    Para listar todos os clientes, o método usado é o GET juntamente com a URL /clientes.
     O retorno deve ser uma lista contendo o nome, telefone, sexo e email de cada cliente.
     
     Sucesso: 200 ok
@@ -55,7 +55,7 @@ produtos, serviços, agendamentos e animais.
 
 ### Adicionar produto 
 
-    curl -X POST http://node23.codenvy.io:53581/produto -d '{"nome"":"", "preço": "", "fabricante":"", "validade":""}'
+    curl -X POST http://node23.codenvy.io:53581/produto -d '{"nome":"", "preco": "", "fabricante":"", "validade":""}'
     
     Para o adicionar um produto, usamos o método POST. 
     Nele colocamos os dados nome, preço, fabricante e validade.
@@ -67,7 +67,7 @@ produtos, serviços, agendamentos e animais.
     
 ### Alterar produto 
 
-    curl -X PUT http://node23.codenvy.io:53581/produto/2 -d '{"nome"":"", "preço": "", "fabricante":"", "validade":""}'
+    curl -X PUT http://node23.codenvy.io:53581/produto/2 -d '{"nome":"", "preco": "", "fabricante":"", "validade":""}'
     
     Para alterar os dados do produto, é utilizado o método PUT, URL e o produto Id. 
     Pode-se alterar nome, preço, fabricante e validade.
@@ -90,20 +90,20 @@ produtos, serviços, agendamentos e animais.
     
 ### Listar produtos
 
-    curl -X GET http://node23.codenvy.io:53581/produto
+    curl -X GET http://node23.codenvy.io:53581/produtos
     
     Para listar todos os produtos, o método usado é o GET juntamente com a URL /produto.
     O retorno deve ser uma lista contendo o nome, preço, fabricante e validade de cada produto.
     
     Sucesso: 200 ok
     
-    Resposta: {["nome"":"", "preço": "", "fabricante":"", "validade":"", "nome"":"", "preço": "", "fabricante":"", "validade":""]}
+    Resposta: {["nome":"", "preço": "", "fabricante":"", "validade":"", "nome"":"", "preço": "", "fabricante":"", "validade":""]}
     
 ## Serviço :shower:
     
 ### Adicionar servico
 
-    curl -X POST http://node23.codenvy.io:53581/servico -d '{"nome"":"", "preço": ""}' 
+    curl -X POST http://node23.codenvy.io:53581/servico -d '{"nome":"", "preco": ""}' 
     
     Para o adicionar um serviço, usamos o método POST. 
     Nele colocamos os dados nome e preço.
@@ -115,7 +115,7 @@ produtos, serviços, agendamentos e animais.
     
 ### Alterar servico
 
-    curl -X PUT http://node23.codenvy.io:53581/servico/1 -d '{"nome"":"", "preço": ""}'
+    curl -X PUT http://node23.codenvy.io:53581/servico/1 -d '{"nome":"", "preco": ""}'
     
     Para alterar os dados do serviço, é utilizado o método PUT, URL e o serviço Id. 
     Pode-se alterar nome e preço.
@@ -138,15 +138,15 @@ produtos, serviços, agendamentos e animais.
     
 ### Listar servico
 
-    curl -X GET http://node23.codenvy.io:53581/servico
+    curl -X GET http://node23.codenvy.io:53581/servicos
     
-    Para listar todos os serviços, o método usado é o GET juntamente com a URL /servico.
+    Para listar todos os serviços, o método usado é o GET juntamente com a URL /servicos.
     O retorno deve ser uma lista contendo o nome, e preço de cada serviço.
     
     
     Sucesso: 200 ok
     
-    Resposta: {["nome"":"", "preço": ", "nome"":"", "preço": "]}
+    Resposta: {["nome":"", "preco": ", "nome"":"", "preço": "]}
     
 ## Agendamento :clock2:
 
@@ -199,7 +199,7 @@ produtos, serviços, agendamentos e animais.
 
 ### Listar agendamentos
 
-    curl -X GET http://node23.codenvy.io:53581/agendamento
+    curl -X GET http://node23.codenvy.io:53581/agendamentos
     
     Para listar todos os agendamentos, o método usado é o GET juntamente com a URL /agendamento.
     O retorno deve ser uma lista contendo a data, o serviço e o animal.
@@ -246,7 +246,7 @@ produtos, serviços, agendamentos e animais.
     
 ### Listar animais
 
-    curl -X GET http://node23.codenvy.io:53581/animal
+    curl -X GET http://node23.codenvy.io:53581/animais
     
     Para listar todos os animais, o método usado é o GET juntamente com a URL /animal.
     O retorno deve ser uma lista contendo o nome, nascimento, tipo e cliente Id de cada animal.
